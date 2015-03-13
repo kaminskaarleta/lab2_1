@@ -73,4 +73,21 @@ public class BinarySearchTest {
 		SearchResult result = BinarySearch.search(5, seq);
 	}
 	
+	@Test
+	public void seqLegthIsEvenNumber_shouldBeTrue() {
+		int seq[] = {1,2,3,4};
+		int key = 4;
+		SearchResult result = BinarySearch.search(key, seq);
+		assertThat(result.isFound(), is(true));
+		assertThat(result.getPosition(), is(key));
+	}
+	
+	@Test
+	public void seqLegthIsOddNumber_shouldBeTrue() {
+		int seq[] = {1,2,3,4,5};
+		int key = 4;
+		SearchResult result = BinarySearch.search(key, seq);
+		assertThat(result.isFound(), is(true));
+		assertThat(result.getPosition(), is(key));
+	}
 }
